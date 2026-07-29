@@ -292,6 +292,12 @@ img { max-width: 100%; }
   margin: 20px 0 0;
 }
 
+.apk-meta {
+  font-size: 12.5px;
+  color: var(--slate-400);
+  margin: 8px 0 0;
+}
+
 /* --- Maquette de téléphone (héros) --------------------------------------- */
 .hero-stage {
   position: relative;
@@ -945,6 +951,11 @@ img { max-width: 100%; }
 .btn-store .stack { display: flex; flex-direction: column; line-height: 1.1; }
 .btn-store .pre { font-size: 10px; opacity: .85; }
 .btn-store .name { font-family: var(--font-display); font-weight: 700; font-size: 16px; }
+
+/* L'appli n'est pas encore publiée : le bloc Google Play informe, il ne
+   clique pas. C'est un <span>, pas un <a> — pas de faux lien mort. */
+.btn-store--soon { cursor: default; }
+.btn-store--soon:hover { background: rgba(255, 255, 255, .14); }
 
 .cta-phone { justify-self: center; }
 .cta-mini {

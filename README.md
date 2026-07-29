@@ -44,6 +44,87 @@ Le contenu de ce dépôt se dépose tel quel chez n'importe quel hébergeur de f
 statiques (Netlify, Vercel, GitHub Pages, Cloudflare Pages). Aucune étape de
 compilation.
 
+## 📦 L'APK téléchargeable
+
+L'application se télécharge **directement depuis le site**, sans passer par le
+Play Store : `telechargements/mesure-plus-1.0.0.apk` (37 Mo).
+
+Les **6 boutons** « Télécharger » de la page pointent dessus, avec l'attribut
+`download` pour que le navigateur enregistre le fichier au lieu de tenter de
+l'afficher.
+
+### Un seul fichier pour tous les téléphones
+
+L'APK est **universel ARM** : il contient à la fois `arm64-v8a` (téléphones
+récents) et `armeabi-v7a` (anciens 32 bits). C'est pour cela qu'il pèse 37 Mo
+plutôt que 21 — mais un visiteur ne sait pas quel processeur il a, et un
+« Application non installée » sans explication le ferait abandonner. Le poids
+est le prix de l'absence de choix à faire.
+
+Commande de construction (depuis le dépôt de l'appli) :
+
+```
+cd "/Users/easycash/Downloads/Mesure Plus"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+~/development/flutter/bin/flutter build apk --release \
+  --target-platform android-arm,android-arm64
+```
+
+Le fichier sort dans `build/app/outputs/flutter-apk/app-release.apk`.
+
+### ⚠️ Toujours vérifier la signature avant de publier
+
+Si `android/key.properties` est absent, le build retombe **silencieusement**
+sur la clé de débogage et l'APK produit n'est pas distribuable. À contrôler :
+
+```
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+"$HOME/Library/Android/sdk/build-tools/36.0.0/apksigner" verify --print-certs \
+  build/app/outputs/flutter-apk/app-release.apk
+```
+
+Doit afficher `CN=Mesure Plus` et l'empreinte SHA-1
+`8ce91de25a6a69670c3cf7f5b383aa425baf2f56`. Toute autre valeur = mauvaise clé.
+
+⚠️ **Ne jamais changer de clé de signature** : Android refuse de mettre à jour
+une application signée différemment. Les utilisateurs devraient désinstaller,
+et perdraient leurs données locales non synchronisées.
+
+### Publier une nouvelle version
+
+1. Reconstruire et vérifier la signature (ci-dessus).
+2. Copier l'APK sous un **nouveau nom versionné**
+   (`telechargements/mesure-plus-1.1.0.apk`) — le nom versionné évite qu'un
+   navigateur ressorte l'ancien fichier de son cache.
+3. Remplacer les 6 occurrences de l'ancien nom dans `index.html`, et le poids
+   dans la clé `apkMeta` de `app.js` (FR **et** EN).
+4. Supprimer l'ancien APK, puis `git add -A`, `git commit`, `git push`.
+5. Penser à mettre à jour `latest_version` dans la table `app_config` de
+   Supabase, sinon le portail de mise à jour de l'appli ne signalera rien.
+
+### 📌 Limite à surveiller
+
+Chaque APK ajouté pèse ~37 Mo **définitivement** dans l'historique git, même
+après suppression du fichier. Deux ou trois versions passent sans problème ;
+au-delà, basculer la distribution vers les **GitHub Releases** (fichiers
+attachés à une version, hors historique) et ne garder ici que le lien.
+
+Pour mémoire : GitHub avertit à 50 Mo par fichier et bloque à 100 Mo.
+
+### Le bloc « Google Play »
+
+L'appli n'étant pas encore publiée, le badge du bas de page affiche
+**« BIENTÔT SUR Google Play »** et n'est **pas cliquable** (c'est un `<span>`,
+pas un lien mort). Le jour de la publication : le repasser en `<a>` vers la
+fiche du store et remettre la clé `playPre` à « DISPONIBLE SUR » / « GET IT ON ».
+
+### L'avertissement d'Android
+
+Installer hors Play Store demande à l'utilisateur d'autoriser « les sources
+inconnues », et Chrome affiche un avertissement au téléchargement. C'est normal
+et inévitable. La **5ᵉ question de la FAQ** l'explique en clair — sans elle,
+beaucoup d'utilisateurs abandonneraient à cet écran.
+
 ## Modifier les textes
 
 **Les dictionnaires `FR` et `EN` de `app.js` font foi.** Ils sont réappliqués à
@@ -91,11 +172,14 @@ pas le WebP ; il n'est téléchargé que dans ce cas.
 
 ## Liens encore à brancher
 
-Les boutons de téléchargement pointent sur `#` : l'application n'est pas encore
-publiée sur le Play Store. Quand elle le sera, remplacer les `href="#"` des
-boutons « Télécharger » et « Google Play » par l'adresse de la fiche. Le lien
-« Contact WhatsApp » du pied de page est déjà branché sur le numéro de support
-(`237678305419`, celui de `AppConstants.supportWhatsAppNumber`).
+- **Les boutons « Télécharger »** sont branchés sur l'APK (voir plus haut) — ils
+  ne pointent plus sur `#`.
+- **« Confidentialité »** (pied de page) pointe encore sur `#` : la page reste à
+  écrire. C'est le seul lien mort de la page.
+- **« Contact WhatsApp »** est branché sur le numéro de support
+  (`237678305419`, celui de `AppConstants.supportWhatsAppNumber`).
+- **« Google Play »** n'est volontairement pas un lien tant que l'appli n'est
+  pas publiée (voir la section APK).
 
 ## Écarts assumés vis-à-vis de la maquette
 
