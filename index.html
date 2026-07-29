@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<!-- L'attribut lang est mis à jour par app.js quand on change de langue. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mesure Plus — l'appli qui remplace ton cahier de couture</title>
+<meta name="description" content="Clients, mesures, commandes et reste à payer : tout est rangé dans ton téléphone, même sans connexion internet. Gratuit jusqu'à 2 clients.">
+<meta name="theme-color" content="#1D4ED8">
+<link rel="icon" href="assets/logo.jpeg">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mesure Plus — l'appli qui remplace ton cahier de couture">
+<meta property="og:description" content="Clients, mesures, commandes et reste à payer : tout est rangé, même hors-ligne.">
+<meta property="og:image" content="assets/logo.jpeg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="#top">
+        <span class="brand-mark"><img src="assets/logo.jpeg" alt=""></span>
+        <span class="brand-name">Mesure Plus</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#features" data-i18n="navFeatures">Fonctionnalités</a>
+        <a href="#pricing" data-i18n="navPricing">Tarif</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Langue / Language">
+          <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="nav-download" href="#download" data-i18n="navDownload">Télécharger</a>
+      </div>
+    </nav>
+  </header>
+
+  <span id="top"></span>
+
+  <!-- ══ Héros ══ -->
+  <section class="hero">
+    <svg class="hero-rings hero-rings--left hero-float" width="360" height="360" viewBox="0 0 360 360" fill="none" stroke="#BFD4F7" aria-hidden="true" focusable="false"><circle cx="180" cy="180" r="60" stroke-width="1.2" stroke-dasharray="3 6"/><circle cx="180" cy="180" r="100" stroke-width="1.2" stroke-dasharray="3 6"/><circle cx="180" cy="180" r="140" stroke-width="1.2" stroke-dasharray="3 6"/><circle cx="180" cy="180" r="178" stroke-width="1.2" stroke-dasharray="3 6"/></svg>
+    <svg class="hero-rings hero-rings--right hero-float" width="360" height="360" viewBox="0 0 360 360" fill="none" stroke="#BFD4F7" aria-hidden="true" focusable="false"><circle cx="180" cy="180" r="60" stroke-width="1.2" stroke-dasharray="3 6"/><circle cx="180" cy="180" r="100" stroke-width="1.2" stroke-dasharray="3 6"/><circle cx="180" cy="180" r="140" stroke-width="1.2" stroke-dasharray="3 6"/><circle cx="180" cy="180" r="178" stroke-width="1.2" stroke-dasharray="3 6"/></svg>
+
+    <div class="hero-inner">
+      <span class="eyebrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#1D4ED8" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/></svg><span data-i18n="eyebrow">Pour les couturiers d’Afrique francophone</span>
+      </span>
+
+      <h1 data-i18n="heroTitle">Ne perds plus jamais les mesures de tes clients</h1>
+      <p class="hero-sub" data-i18n="heroSub">L'appli qui remplace ton cahier de couture. Clients, mesures, commandes et reste à payer — tout est rangé, même sans connexion internet.</p>
+
+      <div class="hero-actions">
+        <a id="download" class="btn-dark" href="#">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true" focusable="false"><path d="M4 3.5v17c0 .6.7 1 1.2.6l12.3-7.6c.6-.4.6-1.3 0-1.7L5.2 2.9C4.7 2.5 4 2.9 4 3.5z"/></svg><span data-i18n="ctaFree">Télécharger gratuitement</span>
+        </a>
+        <a class="btn-ghost" href="#features">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 6h2"/></svg><span data-i18n="ctaScreens">Voir l’appli</span>
+        </a>
+      </div>
+
+      <p class="reassure" data-i18n="reassure">Gratuit jusqu’à 2 clients • Fonctionne hors-ligne • Sans carte bancaire</p>
+
+      <div class="hero-stage">
+        <!-- Cartes flottantes décoratives : masquées sous 860px. -->
+        <div class="float-card float-card--orders hero-float" aria-hidden="true">
+          <div class="float-label" data-i18n="floatOrdersLabel">Commande créée</div>
+          <div class="float-row">
+            <span class="float-avatar">B</span>
+            <div style="flex:1">
+              <div class="float-name">Brice K.</div>
+              <div class="float-sub" data-i18n="floatOrderItem">Chemise sur-mesure</div>
+            </div>
+          </div>
+          <div class="float-paid">
+            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="floatPaidLabel">Payé</span></span>
+            <span>15 000 F</span>
+          </div>
+        </div>
+
+        <div class="float-card float-card--offline hero-float" aria-hidden="true">
+          <div class="float-offline-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5a9 9 0 0 1 14 0"/><path d="M8.5 15.5a4.5 4.5 0 0 1 7 0"/><circle cx="12" cy="19" r="1"/><path d="M3 4l18 18" stroke="#CBD5E1"/></svg><span data-i18n="floatOfflineTitle">Mode hors-ligne</span></div>
+          <p class="float-offline-desc" data-i18n="floatOfflineDesc">Tu continues à travailler sans réseau.</p>
+          <div class="float-offline-status"><span class="dot-amber"></span><span data-i18n="floatOfflineStatus">Synchro en attente</span></div>
+        </div>
+
+        <div class="phone" role="img" aria-label="Aperçu de l'application : fiche client avec ses mesures et le reste à payer">
+          <div class="phone-screen">
+            <div class="phone-top">
+              <div class="phone-status"><span>9:41</span><span>▲ ▂ 🔋</span></div>
+              <div class="phone-back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 18l-6-6 6-6"/></svg><span data-i18n="phTitle">Fiche client</span></div>
+              <div class="phone-client">
+                <span class="phone-avatar">A</span>
+                <div>
+                  <div class="phone-client-name" data-i18n="phName">Amina N.</div>
+                  <div class="phone-client-order" data-i18n="phOrder">Robe wax — Col Claudine</div>
+                </div>
+              </div>
+            </div>
+            <div class="phone-body">
+              <div class="phone-section-label" data-i18n="phMeasures">Mesures</div>
+              <div class="phone-measures" data-list="phRows">
+                <div class="phone-measure-row"><span class="label">Tour de poitrine</span><span class="value">96 cm</span></div>
+                <div class="phone-measure-row"><span class="label">Tour de taille</span><span class="value">78 cm</span></div>
+                <div class="phone-measure-row"><span class="label">Tour de hanches</span><span class="value">102 cm</span></div>
+                <div class="phone-measure-row"><span class="label">Longueur robe</span><span class="value">140 cm</span></div>
+              </div>
+              <div class="phone-paid">
+                <span class="label"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="phPaidLabel">Avance</span></span>
+                <span class="value" data-i18n="phPaidVal">10 000 F</span>
+              </div>
+              <div class="phone-due">
+                <span class="label" data-i18n="phResteLabel">Reste</span>
+                <span class="value" data-i18n="phResteVal">5 000 F</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Le problème ══ -->
+  <section class="section">
+    <h2 class="section-title" data-i18n="probTitle">Le cahier, c’est fini</h2>
+    <p class="section-sub" data-i18n="probSub">Trois galères que tout couturier connaît — et qui coûtent cher.</p>
+    <div class="cards-3">
+      <div class="card">
+        <span class="icon-box icon-box--red"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16l4-2 4 2 4-2 4 2V4"/><path d="M8 9l8 6M16 9l-8 6"/></svg></span>
+        <h3 data-i18n="prob1t">Cahier perdu ou abîmé</h3>
+        <p data-i18n="prob1d">Un cahier qui disparaît, prend l’eau ou se déchire — et toutes tes mesures avec.</p>
+      </div>
+      <div class="card">
+        <span class="icon-box icon-box--red"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+        <h3 data-i18n="prob2t">Mesures introuvables</h3>
+        <p data-i18n="prob2d">Impossible de remettre la main sur la bonne page au moment de couper le tissu.</p>
+      </div>
+      <div class="card">
+        <span class="icon-box icon-box--red"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></span>
+        <h3 data-i18n="prob3t">Erreurs sur les avances</h3>
+        <p data-i18n="prob3d">Un mauvais calcul du reste à payer, et c’est ta marge qui part.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Bénéfices (bento) ══ -->
+  <section class="section" id="features">
+    <h2 class="section-title" data-i18n="benTitle">Tout est rangé, tout est simple</h2>
+    <p class="section-sub" data-i18n="benSub">De la fiche client à la facture, Mesure Plus gère tout ton atelier.</p>
+
+    <div class="bento">
+      <div class="bento-col">
+        <div class="bento-card">
+          <span class="icon-box--white"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <h3 data-i18n="ben1t">Tes mesures en sécurité</h3>
+          <p data-i18n="ben1d">Plus jamais de cahier perdu. Chaque client et ses mesures sont enregistrés en lieu sûr.</p>
+        </div>
+        <div class="bento-card">
+          <span class="icon-box--white"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h3M8 15h3"/><path d="M15 15l2 2 3-3"/></svg></span>
+          <h3 data-i18n="ben2t">Le reste à payer calculé tout seul</h3>
+          <p data-i18n="ben2d">L’appli calcule les avances et le reste dû. Zéro erreur, zéro dispute.</p>
+        </div>
+      </div>
+
+      <div class="bento-phone">
+        <div class="dot-grid" aria-hidden="true"></div>
+        <div class="bento-phone-head">
+          <div class="title" data-i18n="bentoPhoneTitle">Tout dans ta poche</div>
+          <div class="sub" data-i18n="bentoPhoneSub">Client, mesures et paiement</div>
+        </div>
+        <div class="mini-phone" aria-hidden="true">
+          <div class="mini-phone-screen">
+            <div class="mini-phone-head">
+              <div class="mini-label" data-i18n="bentoCard">Fiche client</div>
+              <div class="mini-name">Amina N.</div>
+            </div>
+            <div class="mini-phone-body">
+              <div class="mini-row"><span data-i18n="bentoR1">Poitrine</span><span>96 cm</span></div>
+              <div class="mini-row"><span data-i18n="bentoR2">Taille</span><span>78 cm</span></div>
+              <div class="mini-due"><span class="label" data-i18n="phResteLabel">Reste</span><span class="value">5 000 F</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bento-col">
+        <div class="bento-card">
+          <span class="icon-box--white"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><circle cx="12" cy="20" r="1"/><path d="M3 4l18 18" stroke="#94A3B8"/></svg></span>
+          <h3 data-i18n="ben3t">Marche sans internet</h3>
+          <p data-i18n="ben3d">Travaille hors-ligne. Tout se synchronise automatiquement au retour du réseau.</p>
+        </div>
+        <div class="bento-card">
+          <span class="icon-box--white"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 11.5a8 8 0 0 1-11.5 7L4 20l1.5-5A8 8 0 1 1 21 11.5z"/><path d="M9 11c.5 1.5 2 3 3.5 3.5"/></svg></span>
+          <h3 data-i18n="ben4t">Facture pro sur WhatsApp</h3>
+          <p data-i18n="ben4d">Envoie une facture propre à ton client en un clic, directement sur WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Comment ça marche ══ -->
+  <section class="section">
+    <div class="split">
+      <div class="split-phone">
+        <div class="wa-phone" role="img" aria-label="Facture Mesure Plus envoyée à une cliente sur WhatsApp">
+          <div class="wa-screen">
+            <div class="wa-head">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4z"/><path d="M9 8c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2 0 .4 0 .5l-.4.5c-.1.2-.2.3 0 .5.5.9 1.2 1.5 2.1 1.9.2.1.3 0 .5-.1l.5-.6c.2-.2.3-.2.5-.1l1.5.7c.2.1.3.2.3.4 0 .5-.3 1.3-.7 1.5-.4.3-1.4.6-2.4.2-1.9-.7-3.4-2.2-4.3-4-.4-.8-.4-1.6-.2-2.1z"/></svg>
+              <div class="wa-head-name">Amina N.</div>
+            </div>
+            <div class="wa-body">
+              <div class="wa-invoice">
+                <div class="wa-invoice-head">
+                  <span class="wa-invoice-logo"><img src="assets/logo.jpeg" alt=""></span>
+                  <div class="wa-invoice-title" data-i18n="waInvoice">Facture — Mesure Plus</div>
+                </div>
+                <div class="wa-line"><span data-i18n="waItem">Robe wax</span><span>15 000 F</span></div>
+                <div class="wa-line wa-line--paid"><span data-i18n="floatPaidLabel">Payé</span><span>10 000 F</span></div>
+                <div class="wa-line wa-line--due"><span data-i18n="phResteLabel">Reste</span><span>5 000 F</span></div>
+              </div>
+              <div class="wa-time">10:24 ✓✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="pill" data-i18n="stepsEyebrow">Comment ça marche</span>
+        <h2 data-i18n="stepsTitle">Trois étapes, et c’est réglé</h2>
+        <p class="lead" data-i18n="stepsSub">De l’enregistrement du client à la facture envoyée, tout se fait en quelques secondes.</p>
+        <ol class="steps" style="list-style:none;padding:0;margin:0">
+          <li class="step">
+            <span class="step-num" aria-hidden="true">1</span>
+            <div><h3 data-i18n="step1t">Enregistre le client</h3><p data-i18n="step1">Ajoute ton client et prends ses mesures directement dans l’appli.</p></div>
+          </li>
+          <li class="step">
+            <span class="step-num" aria-hidden="true">2</span>
+            <div><h3 data-i18n="step2t">Crée la commande</h3><p data-i18n="step2">L’appli calcule l’avance et le reste à payer automatiquement.</p></div>
+          </li>
+          <li class="step">
+            <span class="step-num" aria-hidden="true">3</span>
+            <div><h3 data-i18n="step3t">Envoie la facture</h3><p data-i18n="step3">Partage une facture propre sur WhatsApp en un seul clic.</p></div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Pourquoi + preuve sociale ══ -->
+  <section class="section">
+    <div class="why-grid">
+      <div>
+        <span class="pill" data-i18n="whyEyebrow">Pourquoi Mesure Plus</span>
+        <h2 data-i18n="whyTitle">Pensée pour les ateliers d’Afrique francophone</h2>
+        <p class="lead" data-i18n="whyDesc">Une appli légère qui tourne sur les téléphones Android d’entrée de gamme, marche sans réseau et parle le langage des couturiers. Tu gagnes du temps et tu ne perds plus jamais un client.</p>
+        <a class="btn-blue" href="#download">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="#fff" aria-hidden="true" focusable="false"><path d="M4 3.5v17c0 .6.7 1 1.2.6l12.3-7.6c.6-.4.6-1.3 0-1.7L5.2 2.9C4.7 2.5 4 2.9 4 3.5z"/></svg><span data-i18n="ctaFree">Télécharger gratuitement</span>
+        </a>
+      </div>
+
+      <div class="why-media">
+        <!-- Emplacement photo. Déposez l'image dans site/assets/atelier.jpg :
+             app.js la détecte et remplace le repli ci-dessous. -->
+        <figure class="why-photo" id="atelier">
+          <div class="photo-placeholder">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M3 17l5-4 3.5 3L15 12l6 5"/></svg>
+            <span data-i18n="photoPlaceholder">Photo d’atelier de couture (pagne / wax)</span>
+          </div>
+        </figure>
+
+        <ul class="why-stats" data-list="whyStats">
+          <li><span class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg></span><span class="text">Marche sans internet</span></li>
+          <li><span class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg></span><span class="text">Léger sur Android</span></li>
+          <li><span class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg></span><span class="text">Paiement Mobile Money / Orange Money</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title social-title" data-i18n="socialTitle">Ils ont rangé leur cahier</h2>
+
+    <ul class="testimonials" data-list="testimonials">
+      <li>
+        <figure class="card testimonial" style="margin:0">
+          <div class="stars" aria-label="5 étoiles sur 5"><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true" focusable="false"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true" focusable="false"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true" focusable="false"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true" focusable="false"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true" focusable="false"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+          <blockquote>“Avant je cherchais mes mesures partout. Maintenant tout est dans mon téléphone, même quand le réseau coupe.”</blockquote>
+          <figcaption><span class="testimonial-avatar">A</span><div><div class="testimonial-name">Amina</div><div class="testimonial-city">Douala, Cameroun</div></div></figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure class="card testimonial" style="margin:0">
+          <div class="stars" aria-label="5 étoiles sur 5"><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true" focusable="false"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true" focusable="false"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true" focusable="false"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true" focusable="false"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true" focusable="false"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+          <blockquote>“Le calcul du reste à payer m’a sauvé. Mes clients voient exactement ce qu’ils doivent — et je gagne un temps fou.”</blockquote>
+          <figcaption><span class="testimonial-avatar">I</span><div><div class="testimonial-name">Ismaël</div><div class="testimonial-city">Abidjan, Côte d’Ivoire</div></div></figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure class="card testimonial" style="margin:0">
+          <div class="stars" aria-label="5 étoiles sur 5"><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true" focusable="false"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true" focusable="false"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true" focusable="false"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true" focusable="false"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true" focusable="false"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+          <blockquote>“J’envoie la facture sur WhatsApp et le client paie par Mobile Money. Je ne perds plus un seul client.”</blockquote>
+          <figcaption><span class="testimonial-avatar">C</span><div><div class="testimonial-name">Chantal</div><div class="testimonial-city">Dakar, Sénégal</div></div></figcaption>
+        </figure>
+      </li>
+    </ul>
+
+    <p class="trust">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+      <span data-i18n="trust">Tes données et celles de tes clients sont protégées.</span>
+    </p>
+  </section>
+
+  <!-- ══ Tarifs ══ -->
+  <section class="section" id="pricing">
+    <h2 class="section-title" data-i18n="priceTitle">Un tarif simple</h2>
+    <p class="section-sub" data-i18n="priceSub">Commence gratuitement. Passe en illimité quand ton atelier grandit.</p>
+
+    <div class="plans">
+      <div class="plan">
+        <h3 data-i18n="freeName">Gratuit</h3>
+        <div class="plan-price"><span class="amount" data-i18n="freePrice">0 F</span><span class="period" data-i18n="freePeriod">pour toujours</span></div>
+        <ul class="plan-features" data-list="freeFeatures">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg><span>2 clients</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg><span>Toutes les fonctions</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg><span>Fonctionne hors-ligne</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg><span>Facture WhatsApp</span></li>
+        </ul>
+        <a class="plan-cta" href="#download" data-i18n="freeCta">Télécharger</a>
+      </div>
+
+      <div class="plan plan--featured">
+        <span class="plan-badge" data-i18n="unlBadge">2 mois offerts</span>
+        <h3 data-i18n="unlName">Illimité</h3>
+        <div class="plan-price"><span class="amount" data-i18n="unlPrice">500 F</span><span class="period" data-i18n="unlPeriod">/mois</span></div>
+        <div class="plan-alt" data-i18n="unlAlt">ou 5 000 F/an</div>
+        <ul class="plan-features" data-list="unlFeatures">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg><span>Clients illimités</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg><span>Toutes les fonctions</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg><span>Paiement Mobile Money / Orange Money</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg><span>Support prioritaire</span></li>
+        </ul>
+        <a class="plan-cta plan-cta--light" href="#download" data-i18n="unlCta">Télécharger</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ══ -->
+  <section class="section section--narrow">
+    <h2 class="section-title faq-title" data-i18n="faqTitle">Questions fréquentes</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <h3 style="margin:0">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-1" id="faq-q-1">
+            <span data-i18n="faq1q">Ça marche sans internet ?</span><span class="faq-sign" aria-hidden="true">+</span>
+          </button>
+        </h3>
+        <div class="faq-a" id="faq-a-1" role="region" aria-labelledby="faq-q-1" hidden data-i18n="faq1a">Oui. Tu enregistres clients, mesures et commandes hors-ligne. Dès que le réseau revient, tout se synchronise automatiquement.</div>
+      </div>
+      <div class="faq-item">
+        <h3 style="margin:0">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-2" id="faq-q-2">
+            <span data-i18n="faq2q">Comment je paie l’abonnement ?</span><span class="faq-sign" aria-hidden="true">+</span>
+          </button>
+        </h3>
+        <div class="faq-a" id="faq-a-2" role="region" aria-labelledby="faq-q-2" hidden data-i18n="faq2a">Par Mobile Money ou Orange Money, directement depuis l’appli. 500 F par mois ou 5 000 F par an.</div>
+      </div>
+      <div class="faq-item">
+        <h3 style="margin:0">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-3" id="faq-q-3">
+            <span data-i18n="faq3q">Ça marche sur mon téléphone ?</span><span class="faq-sign" aria-hidden="true">+</span>
+          </button>
+        </h3>
+        <div class="faq-a" id="faq-a-3" role="region" aria-labelledby="faq-q-3" hidden data-i18n="faq3a">Oui. Mesure Plus est conçue pour les téléphones Android, même les modèles d’entrée de gamme.</div>
+      </div>
+      <div class="faq-item">
+        <h3 style="margin:0">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-4" id="faq-q-4">
+            <span data-i18n="faq4q">Mes données sont-elles en sécurité ?</span><span class="faq-sign" aria-hidden="true">+</span>
+          </button>
+        </h3>
+        <div class="faq-a" id="faq-a-4" role="region" aria-labelledby="faq-q-4" hidden data-i18n="faq4a">Tes données et celles de tes clients sont sauvegardées et protégées. Toi seul y as accès.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Appel à l'action final ══ -->
+  <section class="section section--bleed">
+    <div class="cta-panel">
+      <div class="dot-grid dot-grid--cta" aria-hidden="true"></div>
+      <div class="cta-grid">
+        <div>
+          <h2 data-i18n="finalTitle">Prêt à ranger ton cahier ?</h2>
+          <div class="cta-actions">
+            <a class="btn-white" href="#">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="#1D4ED8" aria-hidden="true" focusable="false"><path d="M4 3.5v17c0 .6.7 1 1.2.6l12.3-7.6c.6-.4.6-1.3 0-1.7L5.2 2.9C4.7 2.5 4 2.9 4 3.5z"/></svg><span data-i18n="finalCta">Télécharger gratuitement</span>
+            </a>
+            <a class="btn-store" href="#">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true" focusable="false"><path d="M4 3.5v17c0 .6.7 1 1.2.6l12.3-7.6c.6-.4.6-1.3 0-1.7L5.2 2.9C4.7 2.5 4 2.9 4 3.5z"/></svg>
+              <span class="stack"><span class="pre" data-i18n="playPre">DISPONIBLE SUR</span><span class="name">Google Play</span></span>
+            </a>
+          </div>
+        </div>
+        <div class="cta-phone" aria-hidden="true">
+          <div class="cta-mini">
+            <div class="cta-mini-screen">
+              <div class="cta-mini-head"><div class="label" data-i18n="bentoCard">Fiche client</div><div class="name">Amina N.</div></div>
+              <div class="cta-mini-body"><div class="cta-mini-due"><span class="label" data-i18n="phResteLabel">Reste</span><span class="value">5 000 F</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Pied de page ══ -->
+  <footer class="footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-row">
+            <span class="footer-mark"><img src="assets/logo.jpeg" alt=""></span>
+            <span class="footer-name">Mesure Plus</span>
+          </div>
+          <p class="footer-tagline" data-i18n="footTagline">Fait pour les couturiers d’Afrique francophone.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <div class="footer-col-title" data-i18n="footColProduct">Navigation</div>
+            <ul class="footer-links" data-list="footLinks">
+              <li><a href="#features">Fonctionnalités</a></li>
+              <li><a href="#pricing">Tarif</a></li>
+              <li><a href="https://wa.me/237678305419">Contact WhatsApp</a></li>
+              <li><a href="#">Confidentialité</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-legal">© 2026 Mesure Plus</div>
+      <div class="footer-wordmark" aria-hidden="true">Mesure Plus</div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <a href="#">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true" focusable="false"><path d="M4 3.5v17c0 .6.7 1 1.2.6l12.3-7.6c.6-.4.6-1.3 0-1.7L5.2 2.9C4.7 2.5 4 2.9 4 3.5z"/></svg><span data-i18n="ctaFree">Télécharger gratuitement</span>
+    </a>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
