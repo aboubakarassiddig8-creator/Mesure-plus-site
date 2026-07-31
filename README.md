@@ -24,7 +24,8 @@ Ici, il n'y a que du contenu destiné à être vu de tous.
 | `index.html` | La page. Contient le texte **français** en dur (utile sans JavaScript et pour le référencement) |
 | `styles.css` | Tous les styles. La maquette les avait en ligne ; les regrouper ici est ce qui permet aux effets `:hover`, `:focus` et aux media queries de fonctionner réellement |
 | `app.js` | Dictionnaires FR/EN, bascule de langue, accordéon de la FAQ |
-| `assets/logo.jpeg` | Le logo, copié depuis le dépôt de l'appli (`docs/Logo.jpeg`) |
+| `assets/logo.png` | Le logo (512 px), **copie exacte de la pastille de l'appli** (`assets/app_logo.png`, produite par `tool/generate_launcher_icons.py`). Carré bleu bord à bord, coins transparents — surtout pas un JPEG posé sur du blanc, comme celui utilisé jusqu'au 2026-07-31 |
+| `assets/favicon.png` | La même image en 96 px, pour l'onglet du navigateur |
 
 ## Regarder la page
 
