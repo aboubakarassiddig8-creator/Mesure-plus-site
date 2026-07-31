@@ -177,7 +177,7 @@ pas le WebP ; il n'est téléchargé que dans ce cas.
 - **« Confidentialité »** (pied de page) pointe encore sur `#` : la page reste à
   écrire. C'est le seul lien mort de la page.
 - **« Contact WhatsApp »** est branché sur le numéro de support
-  (`237678305419`, celui de `AppConstants.supportWhatsAppNumber`).
+  (`237699386130`, celui de `AppConstants.supportWhatsAppNumber`).
 - **« Google Play »** n'est volontairement pas un lien tant que l'appli n'est
   pas publiée (voir la section APK).
 

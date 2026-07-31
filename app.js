@@ -136,7 +136,7 @@
   var DICTS = { fr: FR, en: EN };
 
   /* Les libellés du pied de page changent de langue, pas leurs destinations. */
-  var FOOT_LINK_HREFS = ['#features', '#pricing', 'https://wa.me/237678305419', '#'];
+  var FOOT_LINK_HREFS = ['#features', '#pricing', 'https://wa.me/237699386130', '#'];
 
   /* --- Petits utilitaires ------------------------------------------------ */
 
