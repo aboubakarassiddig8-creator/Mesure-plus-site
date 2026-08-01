@@ -57,7 +57,7 @@ l'afficher.
 ### Un seul fichier pour tous les téléphones
 
 L'APK est **universel ARM** : il contient à la fois `arm64-v8a` (téléphones
-récents) et `armeabi-v7a` (anciens 32 bits). C'est pour cela qu'il pèse 37 Mo
+récents) et `armeabi-v7a` (anciens 32 bits). C'est pour cela qu'il pèse 39 Mo
 plutôt que 21 — mais un visiteur ne sait pas quel processeur il a, et un
 « Application non installée » sans explication le ferait abandonner. Le poids
 est le prix de l'absence de choix à faire.
@@ -105,7 +105,7 @@ et perdraient leurs données locales non synchronisées.
 
 ### 📌 Limite à surveiller
 
-Chaque APK ajouté pèse ~37 Mo **définitivement** dans l'historique git, même
+Chaque APK ajouté pèse ~39 Mo **définitivement** dans l'historique git, même
 après suppression du fichier. Deux ou trois versions passent sans problème ;
 au-delà, basculer la distribution vers les **GitHub Releases** (fichiers
 attachés à une version, hors historique) et ne garder ici que le lien.
