@@ -48,19 +48,30 @@ compilation.
 ## 📦 L'APK téléchargeable
 
 L'application se télécharge **directement depuis le site**, sans passer par le
-Play Store : `telechargements/mesure-plus-1.0.3.apk` (39 Mo).
+Play Store : `telechargements/mesure-plus-1.0.3-arm64.apk` (22 Mo).
 
 Les **6 boutons** « Télécharger » de la page pointent dessus, avec l'attribut
 `download` pour que le navigateur enregistre le fichier au lieu de tenter de
 l'afficher.
 
-### Un seul fichier pour tous les téléphones
+### 64 bits uniquement (changé le 2026-08-02)
 
-L'APK est **universel ARM** : il contient à la fois `arm64-v8a` (téléphones
-récents) et `armeabi-v7a` (anciens 32 bits). C'est pour cela qu'il pèse 39 Mo
-plutôt que 21 — mais un visiteur ne sait pas quel processeur il a, et un
-« Application non installée » sans explication le ferait abandonner. Le poids
-est le prix de l'absence de choix à faire.
+L'APK ne contient plus que `arm64-v8a`. Il pèse **22 Mo au lieu de 39** —
+44 % de moins à télécharger, ce qui compte pour des visiteurs souvent en
+connexion faible et en données mobiles.
+
+⚠️ **Contrepartie assumée** : les téléphones **32 bits uniquement** (bas de
+gamme d'avant ~2016) ne peuvent plus installer l'application. Ils reçoivent
+un « Application non installée » net. C'est le choix inverse de celui pris
+initialement, où l'on préférait un fichier universel pour n'exclure personne.
+
+📌 **Le refus net n'est pas gratuit, il est CONSTRUIT.** `--target-platform
+android-arm64` seul ne suffit pas : certains greffons déposent quand même de
+petites bibliothèques dans `armeabi-v7a`, Android juge alors l'APK compatible,
+l'installe sur un téléphone 32 bits… qui **plante au démarrage** faute de
+moteur Flutter. C'est le bloc `ndk { abiFilters "arm64-v8a" }` du
+`android/app/build.gradle` de l'appli qui garantit le refus propre. **Ne pas
+le retirer** sans revenir à un APK universel.
 
 Commande de construction (depuis le dépôt de l'appli) :
 
@@ -68,7 +79,14 @@ Commande de construction (depuis le dépôt de l'appli) :
 cd "/Users/easycash/Downloads/Mesure Plus"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 ~/development/flutter/bin/flutter build apk --release \
-  --target-platform android-arm,android-arm64
+  --target-platform android-arm64
+```
+
+Contrôle rapide après build — une seule ligne doit sortir, `lib/arm64-v8a/` :
+
+```
+unzip -l build/app/outputs/flutter-apk/app-release.apk \
+  | grep -o "lib/[a-z0-9_-]*/" | sort -u
 ```
 
 Le fichier sort dans `build/app/outputs/flutter-apk/app-release.apk`.
@@ -105,7 +123,7 @@ et perdraient leurs données locales non synchronisées.
 
 ### 📌 Limite à surveiller
 
-Chaque APK ajouté pèse ~39 Mo **définitivement** dans l'historique git, même
+Chaque APK ajouté pèse ~22 Mo **définitivement** dans l'historique git, même
 après suppression du fichier. Deux ou trois versions passent sans problème ;
 au-delà, basculer la distribution vers les **GitHub Releases** (fichiers
 attachés à une version, hors historique) et ne garder ici que le lien.
