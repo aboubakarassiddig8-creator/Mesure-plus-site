@@ -48,7 +48,7 @@ compilation.
 ## 📦 L'APK téléchargeable
 
 L'application se télécharge **directement depuis le site**, sans passer par le
-Play Store : `telechargements/mesure-plus-1.0.3-arm64.apk` (22 Mo).
+Play Store : `telechargements/mesure-plus-1.0.4-arm64.apk` (22 Mo).
 
 Les **6 boutons** « Télécharger » de la page pointent dessus, avec l'attribut
 `download` pour que le navigateur enregistre le fichier au lieu de tenter de
