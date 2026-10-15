@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/kpay-webhook",
+      "destination": "https://bzyibwhezyzislonwxzk.supabase.co/functions/v1/kpay-webhook"
+    }
+  ]
+}
