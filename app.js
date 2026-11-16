@@ -21,10 +21,12 @@
     navFeatures:'Fonctionnalités', navPricing:'Tarif', navContact:'Contact', navDownload:'Télécharger',
     eyebrow:'Pour les couturiers d’Afrique francophone',
     heroTitle:'Ne perds plus jamais les mesures de tes clients',
-    heroSub:"L'appli qui remplace ton cahier de couture. Clients, mesures, commandes et reste à payer — tout est rangé, même sans connexion internet.",
+    heroSub:"L'appli qui remplace ton cahier de couture. Clients, mesures, commandes et reste à payer — tout est rangé, sur ton téléphone comme sur ordinateur.",
     ctaFree:'Télécharger gratuitement', ctaScreens:'Voir l’appli', playPre:'BIENTÔT SUR',
     apkMeta:'Fichier APK · 22 Mo · Android 6 ou plus récent',
-    reassure:'Gratuit jusqu’à 2 clients • Fonctionne hors-ligne • Sans carte bancaire',
+    reassure:'Gratuit jusqu’à 2 clients • Hors-ligne sur Android • Sans carte bancaire',
+    ctaWeb:'Utiliser sur ordinateur / iPhone →', webMeta:'Dans le navigateur, sans rien installer · Connexion Internet nécessaire',
+    planWeb:'ou utiliser sur ordinateur / iPhone', finalWeb:'Utiliser sur ordinateur / iPhone', mobileWeb:'Utiliser Mesure Plus',
     floatOrdersLabel:'Commande créée', floatOrderItem:'Chemise sur-mesure', floatPaidLabel:'Payé',
     floatOfflineTitle:'Mode hors-ligne', floatOfflineDesc:'Tu continues à travailler sans réseau.', floatOfflineStatus:'Synchro en attente',
     phTitle:'Fiche client', phName:'Amina N.', phOrder:'Robe wax — Col Claudine', phMeasures:'Mesures',
@@ -57,15 +59,16 @@
     trust:'Tes données et celles de tes clients sont protégées.',
     priceTitle:'Un tarif simple', priceSub:'Commence gratuitement. Passe en illimité quand ton atelier grandit.',
     freeName:'Gratuit', freePrice:'0 F', freePeriod:'pour toujours',
-    freeFeatures:['2 clients','Toutes les fonctions','Fonctionne hors-ligne','Facture WhatsApp'], freeCta:'Télécharger',
+    freeFeatures:['2 clients','Toutes les fonctions','Hors-ligne sur Android','Facture WhatsApp'], freeCta:'Télécharger',
     unlName:'Illimité', unlPrice:'1 000 F', unlPeriod:'/mois', unlAlt:'ou 10 000 F/an', unlBadge:'2 mois offerts',
     unlFeatures:['Clients illimités','Toutes les fonctions','Paiement Mobile Money / Orange Money','Support prioritaire'], unlCta:'Télécharger',
     faqTitle:'Questions fréquentes',
-    faq1q:'Ça marche sans internet ?', faq1a:'Oui. Tu enregistres clients, mesures et commandes hors-ligne. Dès que le réseau revient, tout se synchronise automatiquement.',
-    faq2q:'Comment je paie l’abonnement ?', faq2a:'Par Mobile Money ou Orange Money, directement depuis l’appli. 1 000 F par mois ou 10 000 F par an.',
-    faq3q:'Ça marche sur mon téléphone ?', faq3a:'Oui. Mesure Plus est conçue pour les téléphones Android, même les modèles d’entrée de gamme.',
+    faq1q:'Ça marche sans internet ?', faq1a:'Oui, avec l’appli Android : tu enregistres clients, mesures et commandes hors-ligne, et tout se synchronise dès que le réseau revient. Sur ordinateur et sur iPhone, Mesure Plus s’utilise dans le navigateur : il faut alors une connexion Internet.',
+    faq2q:'Comment je paie l’abonnement ?', faq2a:'Par Mobile Money ou Orange Money, directement depuis l’appli ou depuis le navigateur. 1 000 F par mois ou 10 000 F par an.',
+    faq3q:'Ça marche sur mon téléphone ?', faq3a:'Oui. Sur Android, installe l’appli : elle tourne même sur les modèles d’entrée de gamme. Sur iPhone, ouvre app.mesureplus.com dans Safari, sans rien installer.',
     faq4q:'Mes données sont-elles en sécurité ?', faq4a:'Tes données et celles de tes clients sont sauvegardées et protégées. Toi seul y as accès.',
     faq5q:'Comment installer le fichier téléchargé ?', faq5a:'Ouvre le fichier une fois le téléchargement terminé. Android va demander l’autorisation d’installer depuis cette source : accepte, puis appuie sur « Installer ». L’avertissement affiché est normal — il apparaît pour toute application qui ne vient pas du Play Store.',
+    faq6q:'Je peux l’utiliser sur ordinateur ?', faq6a:'Oui. Ouvre app.mesureplus.com dans Chrome, Firefox ou Safari et connecte-toi avec ton compte habituel : tu retrouves les clients, mesures et commandes de ton téléphone. Sur un ordinateur de cybercafé, coche « Ordinateur partagé », utilise une fenêtre de navigation privée et déconnecte-toi en partant.',
     finalTitle:'Prêt à ranger ton cahier ?', finalCta:'Télécharger gratuitement',
     footColProduct:'Navigation', footLinks:['Fonctionnalités','Tarif','Contact WhatsApp','Confidentialité'],
     footTagline:'Fait pour les couturiers d’Afrique francophone.',
@@ -80,10 +83,12 @@
     navFeatures:'Features', navPricing:'Pricing', navContact:'Contact', navDownload:'Download',
     eyebrow:'For tailors across French-speaking Africa',
     heroTitle:"Never lose your clients' measurements again",
-    heroSub:'The app that replaces your tailoring notebook. Clients, measurements, orders and balance due — all organized, even without an internet connection.',
+    heroSub:'The app that replaces your tailoring notebook. Clients, measurements, orders and balance due — all organized, on your phone and on your computer.',
     ctaFree:'Download for free', ctaScreens:'See the app', playPre:'COMING SOON ON',
     apkMeta:'APK file · 22 MB · Android 6 or newer',
-    reassure:'Free up to 2 clients • Works offline • No credit card',
+    reassure:'Free up to 2 clients • Offline on Android • No credit card',
+    ctaWeb:'Use on computer / iPhone →', webMeta:'In your browser, nothing to install · Internet connection required',
+    planWeb:'or use on computer / iPhone', finalWeb:'Use on computer / iPhone', mobileWeb:'Use Mesure Plus',
     floatOrdersLabel:'Order created', floatOrderItem:'Custom shirt', floatPaidLabel:'Paid',
     floatOfflineTitle:'Offline mode', floatOfflineDesc:'Keep working with no network.', floatOfflineStatus:'Sync pending',
     phTitle:'Client file', phName:'Amina N.', phOrder:'Wax dress — Peter Pan collar', phMeasures:'Measurements',
@@ -116,15 +121,16 @@
     trust:"Your data and your clients' data are protected.",
     priceTitle:'Simple pricing', priceSub:'Start free. Go unlimited when your workshop grows.',
     freeName:'Free', freePrice:'0 F', freePeriod:'forever',
-    freeFeatures:['2 clients','All features','Works offline','WhatsApp invoice'], freeCta:'Download',
+    freeFeatures:['2 clients','All features','Offline on Android','WhatsApp invoice'], freeCta:'Download',
     unlName:'Unlimited', unlPrice:'1,000 F', unlPeriod:'/month', unlAlt:'or 10,000 F/year', unlBadge:'2 months free',
     unlFeatures:['Unlimited clients','All features','Mobile Money / Orange Money payment','Priority support'], unlCta:'Download',
     faqTitle:'Frequently asked questions',
-    faq1q:'Does it work without internet?', faq1a:'Yes. You save clients, measurements and orders offline. As soon as the network returns, everything syncs automatically.',
-    faq2q:'How do I pay for the subscription?', faq2a:'By Mobile Money or Orange Money, directly from the app. 1,000 F per month or 10,000 F per year.',
-    faq3q:'Does it work on my phone?', faq3a:'Yes. Mesure Plus is built for Android phones, even entry-level models.',
+    faq1q:'Does it work without internet?', faq1a:'Yes, with the Android app: you save clients, measurements and orders offline, and everything syncs as soon as the network returns. On a computer or an iPhone, Mesure Plus runs in the browser, so an internet connection is required.',
+    faq2q:'How do I pay for the subscription?', faq2a:'By Mobile Money or Orange Money, directly from the app or from your browser. 1,000 F per month or 10,000 F per year.',
+    faq3q:'Does it work on my phone?', faq3a:'Yes. On Android, install the app: it runs even on entry-level models. On iPhone, open app.mesureplus.com in Safari, nothing to install.',
     faq4q:'Is my data safe?', faq4a:"Your data and your clients' data are backed up and protected. Only you have access.",
     faq5q:'How do I install the downloaded file?', faq5a:'Open the file once the download finishes. Android will ask permission to install from this source: accept, then tap “Install”. The warning shown is normal — it appears for any app that does not come from the Play Store.',
+    faq6q:'Can I use it on a computer?', faq6a:'Yes. Open app.mesureplus.com in Chrome, Firefox or Safari and sign in with your usual account: you get the same clients, measurements and orders as on your phone. On a cybercafé computer, tick “Shared computer”, use a private browsing window and sign out when you leave.',
     finalTitle:'Ready to put away your notebook?', finalCta:'Download for free',
     footColProduct:'Navigation', footLinks:['Features','Pricing','WhatsApp Contact','Privacy'],
     footTagline:'Made for tailors across French-speaking Africa.',
@@ -352,6 +358,28 @@
     })(0);
   }
 
+  /* --- Bouton collé en bas, sur iPhone / iPad ----------------------------
+     L'APK Android ne s'installe pas sur iOS : là, le bouton ouvre la version
+     web. Le texte reste piloté par le dictionnaire (clé mobileWeb). Les
+     iPad récents se présentent comme un Mac, d'où le test du tactile.     */
+
+  var WEB_APP_URL = 'https://app.mesureplus.com';
+
+  function isIos() {
+    var ua = navigator.userAgent || '';
+    return /iPhone|iPad|iPod/.test(ua) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  }
+
+  function setupMobileCta() {
+    var link = document.getElementById('mobile-cta-link');
+    if (!link || !isIos()) return;
+    link.href = WEB_APP_URL;
+    link.removeAttribute('download');
+    var label = link.querySelector('[data-i18n]');
+    if (label) label.setAttribute('data-i18n', 'mobileWeb');
+  }
+
   /* --- Démarrage --------------------------------------------------------- */
 
   function init() {
@@ -363,6 +391,7 @@
 
     setupFaq();
     setupAtelierPhoto();
+    setupMobileCta();
     applyLang('fr'); // Le français est la langue par défaut, comme dans la maquette.
   }
 
