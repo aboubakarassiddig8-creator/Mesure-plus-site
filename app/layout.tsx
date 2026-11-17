@@ -14,6 +14,7 @@ const description =
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  alternates: { canonical: "/" },
   title,
   description,
   icons: { icon: "/assets/favicon.png", apple: "/assets/logo.png" },
