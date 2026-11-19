@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   title,
   description,
-  icons: { icon: "/assets/favicon.png", apple: "/assets/logo.png" },
+  icons: { icon: "/assets/favicon.png", apple: "/assets/apple-touch-icon.png" },
   openGraph: {
     type: "website",
     title,
