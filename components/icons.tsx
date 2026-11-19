@@ -34,6 +34,12 @@ export const DownloadIcon = (p: IconProps) => (
   </Svg>
 );
 
+export const AndroidIcon = (p: IconProps) => (
+  <Svg {...p} fill="currentColor" stroke="none">
+    <path d="M17.6 9.48l1.84-3.18a.38.38 0 0 0-.66-.38l-1.86 3.22a11.4 11.4 0 0 0-9.84 0L5.22 5.92a.38.38 0 0 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z" />
+  </Svg>
+);
+
 export const PhoneIcon = (p: IconProps) => (
   <Svg {...p}>
     <rect x="6" y="2.5" width="12" height="19" rx="3" />
@@ -140,12 +146,6 @@ export const CheckIcon = (p: IconProps) => (
 export const PlusIcon = (p: IconProps) => (
   <Svg {...p}>
     <path d="M12 5v14M5 12h14" />
-  </Svg>
-);
-
-export const PlayIcon = (p: IconProps) => (
-  <Svg {...p} fill="currentColor" stroke="none">
-    <path d="M5 3.6v16.8c0 .7.8 1.1 1.4.7l13.2-8.4c.5-.4.5-1.1 0-1.5L6.4 2.9C5.8 2.5 5 2.9 5 3.6z" />
   </Svg>
 );
 

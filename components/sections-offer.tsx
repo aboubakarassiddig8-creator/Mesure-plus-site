@@ -3,8 +3,8 @@
 import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
 import Image from "next/image";
 import { useId, useState } from "react";
-import { Button, DownloadButton } from "@/components/buttons";
-import { CheckIcon, DownloadIcon, FeatherIcon, MonitorIcon, PlayIcon, PlusIcon, ShieldCheckIcon, WalletIcon, WifiOffIcon } from "@/components/icons";
+import { DownloadButton, PlatformButtons } from "@/components/buttons";
+import { CheckIcon, DownloadIcon, FeatherIcon, MonitorIcon, PlusIcon, ShieldCheckIcon, WalletIcon, WifiOffIcon } from "@/components/icons";
 import { Phone } from "@/components/phone";
 import { Reveal } from "@/components/reveal";
 import { Eyebrow, SectionHead } from "@/components/section-head";
@@ -223,20 +223,7 @@ export function FinalCta() {
         <div className="grid items-center gap-10 px-6 pt-14 sm:px-12 lg:grid-cols-[1.2fr_0.8fr] lg:pt-0">
           <div className="lg:py-20">
             <SplitReveal className="type-h2 max-w-lg text-balance">{t.final.title}</SplitReveal>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <DownloadButton label={t.final.cta} variant="white" className="w-full sm:w-auto" />
-              <Button href={WEB_APP_URL} variant="ghost" className="w-full border-white/40 bg-transparent text-white hover:border-white hover:text-white sm:w-auto">
-                <MonitorIcon size={19} />
-                {t.final.web}
-              </Button>
-            </div>
-            <span className="mt-4 inline-flex items-center gap-3 rounded-2xl border border-white/30 px-4 py-2 opacity-80">
-              <PlayIcon size={20} />
-              <span className="flex flex-col leading-tight">
-                <span className="text-[0.66rem] font-bold tracking-wider">{t.final.playPre}</span>
-                <span className="font-semibold">Google Play</span>
-              </span>
-            </span>
+            <PlatformButtons onBlue className="mt-9" />
           </div>
           <div aria-hidden className="relative mx-auto h-72 w-[min(66vw,260px)] self-end overflow-hidden lg:h-[24rem]">
             <Phone screen="order" alt="" className="absolute top-0 w-full" />

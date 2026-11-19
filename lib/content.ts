@@ -5,7 +5,7 @@
 export type Lang = "fr" | "en";
 
 /** Bump the file name here when a new APK ships (versioned name = no stale cache). */
-export const APK_URL = "/telechargements/mesure-plus-1.0.9-arm64.apk";
+export const APK_URL = "/telechargements/mesure-plus-1.0.10-arm64.apk";
 export const WEB_APP_URL = "https://app.mesureplus.com";
 export const WHATSAPP_URL = "https://wa.me/237699386130";
 export const SITE_URL = "https://mesureplus.com";
@@ -35,11 +35,7 @@ const fr = {
     title: { before: "Ne perds plus jamais les", em: "mesures", after: "de tes clients" },
     sub: "L'appli qui remplace ton cahier de couture. Clients, mesures, commandes et reste à payer — tout est rangé, sur ton téléphone comme sur ordinateur.",
     ctaFree: "Télécharger gratuitement",
-    ctaScreens: "Voir l’appli",
-    ctaWeb: "Utiliser sur ordinateur / iPhone →",
-    webMeta: "Dans le navigateur, sans rien installer · Connexion Internet nécessaire",
     reassure: ["Gratuit jusqu’à 2 clients", "Hors-ligne sur Android", "Sans carte bancaire"],
-    apkMeta: "Fichier APK · 22 Mo · Android 6 ou plus récent",
     phoneAlt: "Aperçu de l'application : fiche client avec ses mesures et le reste à payer",
     resteLabel: "Reste",
     resteVal: "5 000 F",
@@ -125,9 +121,13 @@ const fr = {
   },
   final: {
     title: "Prêt à ranger ton cahier ?",
-    cta: "Télécharger gratuitement",
-    web: "Utiliser sur ordinateur / iPhone",
-    playPre: "BIENTÔT SUR",
+  },
+  platforms: {
+    downloadFor: "Télécharger pour",
+    useOn: "Utiliser sur",
+    computer: "Ordinateur",
+    apkMeta: "Android : fichier APK de 23 Mo, Android 6 ou plus récent",
+    webMeta: "iPhone et ordinateur : dans le navigateur, sans rien installer",
   },
   footer: {
     tagline: "Fait pour les couturiers d’Afrique francophone.",
@@ -155,11 +155,7 @@ const en: Content = {
     title: { before: "Never lose your clients'", em: "measurements", after: "again" },
     sub: "The app that replaces your tailoring notebook. Clients, measurements, orders and balance due — all organized, on your phone and on your computer.",
     ctaFree: "Download for free",
-    ctaScreens: "See the app",
-    ctaWeb: "Use on computer / iPhone →",
-    webMeta: "In your browser, nothing to install · Internet connection required",
     reassure: ["Free up to 2 clients", "Offline on Android", "No credit card"],
-    apkMeta: "APK file · 22 MB · Android 6 or newer",
     phoneAlt: "App preview: client file with measurements and balance due",
     resteLabel: "Balance",
     resteVal: "5,000 F",
@@ -245,9 +241,13 @@ const en: Content = {
   },
   final: {
     title: "Ready to put away your notebook?",
-    cta: "Download for free",
-    web: "Use on computer / iPhone",
-    playPre: "COMING SOON ON",
+  },
+  platforms: {
+    downloadFor: "Download for",
+    useOn: "Use on",
+    computer: "Computer",
+    apkMeta: "Android: 23 MB APK file, Android 6 or newer",
+    webMeta: "iPhone and computer: in your browser, nothing to install",
   },
   footer: {
     tagline: "Made for tailors across French-speaking Africa.",

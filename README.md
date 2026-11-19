@@ -108,12 +108,21 @@ l'appli**, à corriger côté Flutter.
 ## 📦 L'APK téléchargeable
 
 L'application se télécharge **directement depuis le site**, sans passer par le
-Play Store : `public/telechargements/mesure-plus-1.0.9-arm64.apk` (22 Mo),
-servi à l'adresse `/telechargements/mesure-plus-1.0.9-arm64.apk`.
+Play Store : `public/telechargements/mesure-plus-1.0.10-arm64.apk` (23 Mo),
+servi à l'adresse `/telechargements/mesure-plus-1.0.10-arm64.apk`.
 
 Tous les boutons « Télécharger » lisent l'adresse dans **une seule constante**,
 `APK_URL` de `lib/content.ts`, avec l'attribut `download` pour que le
 navigateur enregistre le fichier au lieu de tenter de l'afficher.
+
+En haut de page et dans le dernier appel, `PlatformButtons`
+(`components/buttons.tsx`) affiche **trois boutons par appareil** :
+« Télécharger pour Android » (l'APK), « Utiliser sur iPhone » et « Utiliser sur
+Ordinateur » (les deux vers `WEB_APP_URL`).
+
+`vercel.json` force `"framework": "nextjs"` : sans lui, un projet Vercel créé
+pour l'ancien site (fichiers simples) pourrait publier le dépôt sans le
+construire.
 
 Sur **iPhone / iPad**, où un APK ne s'installe pas, la barre collante du bas
 ouvre l'appli web (`https://app.mesureplus.com`) à la place.

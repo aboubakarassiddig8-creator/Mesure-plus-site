@@ -2,11 +2,10 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import { Fragment } from "react";
-import { Button, DownloadButton } from "@/components/buttons";
-import { CheckIcon, PhoneIcon, WifiOffIcon } from "@/components/icons";
+import { PlatformButtons } from "@/components/buttons";
+import { CheckIcon, WifiOffIcon } from "@/components/icons";
 import { Phone } from "@/components/phone";
 import { Eyebrow } from "@/components/section-head";
-import { WEB_APP_URL } from "@/lib/content";
 import { useLang } from "@/lib/i18n";
 import { EASE } from "@/lib/motion";
 
@@ -201,19 +200,12 @@ export function Hero() {
             {t.hero.sub}
           </motion.p>
 
-          <motion.div {...fade(0.65)} className="mt-8 flex flex-wrap gap-3">
-            <DownloadButton id="download" label={t.hero.ctaFree} className="w-full sm:w-auto" />
-            <Button href="#features" variant="ghost" className="w-full sm:w-auto">
-              <PhoneIcon size={19} />
-              {t.hero.ctaScreens}
-            </Button>
-          </motion.div>
-
-          <motion.div {...fade(0.75)} className="mt-5">
-            <a href={WEB_APP_URL} className="font-semibold text-blue-ink underline-offset-4 hover:underline">
-              {t.hero.ctaWeb}
-            </a>
-            <p className="mt-1 text-sm text-ink-2">{t.hero.webMeta}</p>
+          <motion.div {...fade(0.65)} className="mt-8">
+            <PlatformButtons id="download" />
+            <ul className="mt-3 space-y-0.5 text-sm text-ink-2 tabular-nums">
+              <li>{t.platforms.apkMeta}</li>
+              <li>{t.platforms.webMeta}</li>
+            </ul>
           </motion.div>
 
           <motion.ul {...fade(0.85)} className="mt-7 flex flex-wrap gap-x-5 gap-y-2 border-t border-dashed border-ink/20 pt-5 text-[0.95rem] font-medium">
@@ -224,9 +216,6 @@ export function Hero() {
               </li>
             ))}
           </motion.ul>
-          <motion.p {...fade(0.9)} className="mt-2 text-sm text-ink-2 tabular-nums">
-            {t.hero.apkMeta}
-          </motion.p>
         </div>
 
         <MeasuredPhone />
