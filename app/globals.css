@@ -1,0 +1,232 @@
+@import "tailwindcss";
+
+@custom-variant dark {
+  &:where([data-theme="dark"], [data-theme="dark"] *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(:root:not([data-theme="light"]), :root:not([data-theme="light"]) *) {
+      @slot;
+    }
+  }
+}
+
+/* ── Tokens: "the cutting table" ───────────────────────────────────────────
+   60 pattern paper · 30 night ink · 10 Mesure blue. Green "paid" and orange
+   "balance due" keep the meaning they have inside the app. */
+:root {
+  --paper: #f6f1e7;
+  --paper-2: #efe7d7;
+  --kraft: #e8dcc4;
+  --kraft-edge: #cdb995;
+  --card: #fffdf8;
+  --ink: #0e1a33;
+  --ink-2: #4b5468;
+  --line: #ded3bf;
+  --blue: #1d4ed8;
+  --blue-ink: #1d4ed8;
+  --blue-deep: #17408b;
+  --blue-soft: #dce6fb;
+  --on-blue: #ffffff;
+  --green: #15803d;
+  --green-soft: #dcf5e4;
+  --orange: #c8431f;
+  --orange-soft: #fde5dc;
+  --tape: #fbf6e9;
+  --tape-tick: #17408b;
+  --bezel: #0e1a33;
+  --grain-opacity: 0.35;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0b1220;
+    --paper-2: #101a2d;
+    --kraft: #1a2438;
+    --kraft-edge: #33405b;
+    --card: #131e33;
+    --ink: #eef1f7;
+    --ink-2: #a5aec2;
+    --line: #26324a;
+    --blue: #3567f0;
+    --blue-ink: #8fb0ff;
+    --blue-deep: #b9cdff;
+    --blue-soft: #1a2a52;
+    --green: #4ade80;
+    --green-soft: #12301f;
+    --orange: #ff8a65;
+    --orange-soft: #3a1d14;
+    --tape: #e9e2cf;
+    --tape-tick: #17408b;
+    --bezel: #030712;
+    --grain-opacity: 0.12;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #0b1220;
+  --paper-2: #101a2d;
+  --kraft: #1a2438;
+  --kraft-edge: #33405b;
+  --card: #131e33;
+  --ink: #eef1f7;
+  --ink-2: #a5aec2;
+  --line: #26324a;
+  --blue: #3567f0;
+  --blue-ink: #8fb0ff;
+  --blue-deep: #b9cdff;
+  --blue-soft: #1a2a52;
+  --green: #4ade80;
+  --green-soft: #12301f;
+  --orange: #ff8a65;
+  --orange-soft: #3a1d14;
+  --tape: #e9e2cf;
+  --tape-tick: #17408b;
+  --bezel: #030712;
+  --grain-opacity: 0.12;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-kraft: var(--kraft);
+  --color-kraft-edge: var(--kraft-edge);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-line: var(--line);
+  --color-blue: var(--blue);
+  --color-blue-ink: var(--blue-ink);
+  --color-blue-deep: var(--blue-deep);
+  --color-blue-soft: var(--blue-soft);
+  --color-on-blue: var(--on-blue);
+  --color-green: var(--green);
+  --color-green-soft: var(--green-soft);
+  --color-orange: var(--orange);
+  --color-orange-soft: var(--orange-soft);
+  --color-tape: var(--tape);
+  --color-tape-tick: var(--tape-tick);
+  --color-bezel: var(--bezel);
+  --font-display: var(--font-gloock), Georgia, serif;
+  --font-sans: var(--font-figtree), system-ui, sans-serif;
+}
+
+html {
+  scroll-padding-top: 88px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--blue);
+  color: var(--on-blue);
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue-ink);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* ── Type scale (named type-*, never text-*: tailwind-merge would drop them) ── */
+@utility type-hero {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 1.6rem + 3.6vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+@utility type-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 1.5rem + 2.6vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+@utility type-h3 {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  line-height: 1.15;
+}
+@utility type-lead {
+  font-size: clamp(1.06rem, 1rem + 0.3vw, 1.2rem);
+  line-height: 1.6;
+}
+
+/* Kraft pattern paper: a light grain, never a decorative gradient. */
+@utility grain {
+  position: relative;
+  isolation: isolate;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: inherit;
+    opacity: var(--grain-opacity);
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .36 0 0 0 0 .2 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Topstitching: a dashed seam running inside the edge of a card. */
+@utility topstitch {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border-radius: calc(var(--radius, 22px) - 7px);
+    border: 1.5px dashed color-mix(in oklab, var(--stitch, var(--blue)) 45%, transparent);
+    pointer-events: none;
+  }
+}
+
+/* Tape-measure ticks: 1 cm minor, 5 cm medium, drawn with gradients. */
+@utility tape-ticks-x {
+  background-image:
+    repeating-linear-gradient(90deg, var(--tape-tick) 0 1.5px, transparent 1.5px 50px),
+    repeating-linear-gradient(90deg, var(--tape-tick) 0 1px, transparent 1px 25px),
+    repeating-linear-gradient(90deg, var(--tape-tick) 0 1px, transparent 1px 5px);
+  background-size:
+    100% 55%,
+    100% 38%,
+    100% 22%;
+  background-repeat: no-repeat;
+}
+@utility tape-ticks-y {
+  background-image:
+    repeating-linear-gradient(180deg, var(--tape-tick) 0 1.5px, transparent 1.5px 50px),
+    repeating-linear-gradient(180deg, var(--tape-tick) 0 1px, transparent 1px 25px),
+    repeating-linear-gradient(180deg, var(--tape-tick) 0 1px, transparent 1px 5px);
+  background-size:
+    55% 100%,
+    38% 100%,
+    22% 100%;
+  background-repeat: no-repeat;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
