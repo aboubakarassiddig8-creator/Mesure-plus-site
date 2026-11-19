@@ -62,20 +62,29 @@
       <h1 data-i18n="heroTitle">Ne perds plus jamais les mesures de tes clients</h1>
       <p class="hero-sub" data-i18n="heroSub">L'appli qui remplace ton cahier de couture. Clients, mesures, commandes et reste à payer — tout est rangé, sur ton téléphone comme sur ordinateur.</p>
 
-      <div class="hero-actions">
-        <a id="download" class="btn-dark" href="telechargements/mesure-plus-1.0.9-arm64.apk" download>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true" focusable="false"><path d="M4 3.5v17c0 .6.7 1 1.2.6l12.3-7.6c.6-.4.6-1.3 0-1.7L5.2 2.9C4.7 2.5 4 2.9 4 3.5z"/></svg><span data-i18n="ctaFree">Télécharger gratuitement</span>
+      <!-- Trois boutons, un par appareil. Android télécharge l'APK ; iPhone et
+           ordinateur ouvrent la version web (rien à installer). -->
+      <div class="platforms" id="download">
+        <a class="platform platform--primary" href="telechargements/mesure-plus-1.0.10-arm64.apk" download>
+          <svg class="platform-icon" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.6 9.48l1.84-3.18a.38.38 0 0 0-.66-.38l-1.86 3.22a11.4 11.4 0 0 0-9.84 0L5.22 5.92a.38.38 0 0 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg>
+          <span class="platform-text"><span class="platform-pre" data-i18n="platDownloadFor">Télécharger pour</span><span class="platform-name">Android</span></span>
         </a>
-        <a class="btn-ghost" href="#features">
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 6h2"/></svg><span data-i18n="ctaScreens">Voir l’appli</span>
+        <a class="platform" href="https://app.mesureplus.com">
+          <svg class="platform-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+          <span class="platform-text"><span class="platform-pre" data-i18n="platUseOn">Utiliser sur</span><span class="platform-name">iPhone</span></span>
+        </a>
+        <a class="platform" href="https://app.mesureplus.com">
+          <svg class="platform-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+          <span class="platform-text"><span class="platform-pre" data-i18n="platUseOn">Utiliser sur</span><span class="platform-name" data-i18n="platComputer">Ordinateur</span></span>
         </a>
       </div>
 
-      <p class="web-link"><a href="https://app.mesureplus.com" data-i18n="ctaWeb">Utiliser sur ordinateur / iPhone →</a></p>
-      <p class="web-meta" data-i18n="webMeta">Dans le navigateur, sans rien installer · Connexion Internet nécessaire</p>
+      <ul class="platforms-meta">
+        <li data-i18n="apkMeta">Android : fichier APK de 23 Mo, Android 6 ou plus récent</li>
+        <li data-i18n="webMeta">iPhone et ordinateur : dans le navigateur, sans rien installer</li>
+      </ul>
 
       <p class="reassure" data-i18n="reassure">Gratuit jusqu’à 2 clients • Hors-ligne sur Android • Sans carte bancaire</p>
-      <p class="apk-meta" data-i18n="apkMeta">Fichier APK · 22 Mo · Android 6 ou plus récent</p>
 
       <div class="hero-stage">
         <!-- Cartes flottantes décoratives : masquées sous 860px. -->
@@ -269,7 +278,7 @@
         <span class="pill" data-i18n="whyEyebrow">Pourquoi Mesure Plus</span>
         <h2 data-i18n="whyTitle">Pensée pour les ateliers d’Afrique francophone</h2>
         <p class="lead" data-i18n="whyDesc">Une appli légère qui tourne sur les téléphones Android d’entrée de gamme, marche sans réseau et parle le langage des couturiers. Tu gagnes du temps et tu ne perds plus jamais un client.</p>
-        <a class="btn-blue" href="telechargements/mesure-plus-1.0.9-arm64.apk" download>
+        <a class="btn-blue" href="telechargements/mesure-plus-1.0.10-arm64.apk" download>
           <svg width="19" height="19" viewBox="0 0 24 24" fill="#fff" aria-hidden="true" focusable="false"><path d="M4 3.5v17c0 .6.7 1 1.2.6l12.3-7.6c.6-.4.6-1.3 0-1.7L5.2 2.9C4.7 2.5 4 2.9 4 3.5z"/></svg><span data-i18n="ctaFree">Télécharger gratuitement</span>
         </a>
       </div>
@@ -339,7 +348,7 @@
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg><span>Hors-ligne sur Android</span></li>
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg><span>Facture WhatsApp</span></li>
         </ul>
-        <a class="plan-cta" href="telechargements/mesure-plus-1.0.9-arm64.apk" download data-i18n="freeCta">Télécharger</a>
+        <a class="plan-cta" href="telechargements/mesure-plus-1.0.10-arm64.apk" download data-i18n="freeCta">Télécharger</a>
         <a class="plan-web" href="https://app.mesureplus.com" data-i18n="planWeb">ou utiliser sur ordinateur / iPhone</a>
       </div>
 
@@ -354,7 +363,7 @@
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg><span>Paiement Mobile Money / Orange Money</span></li>
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg><span>Support prioritaire</span></li>
         </ul>
-        <a class="plan-cta plan-cta--light" href="telechargements/mesure-plus-1.0.9-arm64.apk" download data-i18n="unlCta">Télécharger</a>
+        <a class="plan-cta plan-cta--light" href="telechargements/mesure-plus-1.0.10-arm64.apk" download data-i18n="unlCta">Télécharger</a>
         <a class="plan-web" href="https://app.mesureplus.com" data-i18n="planWeb">ou utiliser sur ordinateur / iPhone</a>
       </div>
     </div>
@@ -422,17 +431,19 @@
       <div class="cta-grid">
         <div>
           <h2 data-i18n="finalTitle">Prêt à ranger ton cahier ?</h2>
-          <div class="cta-actions">
-            <a class="btn-white" href="telechargements/mesure-plus-1.0.9-arm64.apk" download>
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="#1D4ED8" aria-hidden="true" focusable="false"><path d="M4 3.5v17c0 .6.7 1 1.2.6l12.3-7.6c.6-.4.6-1.3 0-1.7L5.2 2.9C4.7 2.5 4 2.9 4 3.5z"/></svg><span data-i18n="finalCta">Télécharger gratuitement</span>
+          <div class="platforms platforms--on-blue">
+            <a class="platform platform--primary" href="telechargements/mesure-plus-1.0.10-arm64.apk" download>
+              <svg class="platform-icon" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.6 9.48l1.84-3.18a.38.38 0 0 0-.66-.38l-1.86 3.22a11.4 11.4 0 0 0-9.84 0L5.22 5.92a.38.38 0 0 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg>
+              <span class="platform-text"><span class="platform-pre" data-i18n="platDownloadFor">Télécharger pour</span><span class="platform-name">Android</span></span>
             </a>
-            <a class="btn-store btn-store--web" href="https://app.mesureplus.com">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><span data-i18n="finalWeb">Utiliser sur ordinateur / iPhone</span>
+            <a class="platform" href="https://app.mesureplus.com">
+              <svg class="platform-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+              <span class="platform-text"><span class="platform-pre" data-i18n="platUseOn">Utiliser sur</span><span class="platform-name">iPhone</span></span>
             </a>
-            <span class="btn-store btn-store--soon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true" focusable="false"><path d="M4 3.5v17c0 .6.7 1 1.2.6l12.3-7.6c.6-.4.6-1.3 0-1.7L5.2 2.9C4.7 2.5 4 2.9 4 3.5z"/></svg>
-              <span class="stack"><span class="pre" data-i18n="playPre">BIENTÔT SUR</span><span class="name">Google Play</span></span>
-            </span>
+            <a class="platform" href="https://app.mesureplus.com">
+              <svg class="platform-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+              <span class="platform-text"><span class="platform-pre" data-i18n="platUseOn">Utiliser sur</span><span class="platform-name" data-i18n="platComputer">Ordinateur</span></span>
+            </a>
           </div>
         </div>
         <div class="cta-phone" aria-hidden="true">
@@ -476,7 +487,7 @@
   </footer>
 
   <div class="mobile-cta">
-    <a id="mobile-cta-link" href="telechargements/mesure-plus-1.0.9-arm64.apk" download>
+    <a id="mobile-cta-link" href="telechargements/mesure-plus-1.0.10-arm64.apk" download>
       <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true" focusable="false"><path d="M4 3.5v17c0 .6.7 1 1.2.6l12.3-7.6c.6-.4.6-1.3 0-1.7L5.2 2.9C4.7 2.5 4 2.9 4 3.5z"/></svg><span data-i18n="ctaFree">Télécharger gratuitement</span>
     </a>
   </div>

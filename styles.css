@@ -229,45 +229,6 @@ img { max-width: 100%; }
   margin: 20px auto 0;
 }
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  align-items: center;
-  justify-content: center;
-  margin: 30px 0 0;
-}
-
-.btn-dark {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  background: var(--ink);
-  color: #fff;
-  font-weight: 700;
-  font-size: 16px;
-  padding: 15px 26px;
-  border-radius: 14px;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, .22);
-  transition: background .15s;
-}
-.btn-dark:hover { background: #1e293b; color: #fff; }
-
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  background: #fff;
-  color: var(--blue);
-  font-weight: 700;
-  font-size: 16px;
-  padding: 15px 24px;
-  border-radius: 14px;
-  border: 1px solid var(--blue-tint-strong);
-  transition: background .15s;
-}
-.btn-ghost:hover { background: var(--blue-tint); }
-
 .btn-blue {
   display: inline-flex;
   align-items: center;
@@ -294,10 +255,85 @@ img { max-width: 100%; }
   margin: 20px 0 0;
 }
 
-.apk-meta {
+/* --- Boutons par appareil (Android, iPhone, ordinateur) ---------------- */
+/* Même taille pour les trois, sur une ligne ; empilés sur téléphone.
+   Android (téléchargement de l'APK) est le bouton principal, en bleu. */
+.platforms {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 660px;
+  margin: 32px auto 0;
+}
+
+.platform {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 62px;
+  padding: 11px 18px;
+  border-radius: 14px;
+  background: var(--ink);
+  color: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, .18);
+  transition: transform .15s, box-shadow .15s, background .15s;
+}
+.platform:hover {
+  color: #fff;
+  background: #1e293b;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, .24);
+}
+.platform:focus-visible { outline: 3px solid var(--blue-tint-strong); outline-offset: 3px; }
+
+.platform--primary { background: var(--blue); box-shadow: 0 10px 24px rgba(29, 78, 216, .32); }
+.platform--primary:hover { background: var(--blue-dark); box-shadow: 0 14px 28px rgba(29, 78, 216, .38); }
+
+.platform-icon { flex: none; }
+.platform-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.15; text-align: left; }
+.platform-pre { font-size: 12px; font-weight: 500; opacity: .78; white-space: nowrap; }
+.platform-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  white-space: nowrap;
+}
+
+/* Sur le panneau bleu de l'appel final : Android en blanc, les deux autres
+   en verre dépoli, pour ne pas disparaître dans le fond. */
+.platforms--on-blue { margin: 26px 0 0; max-width: 620px; }
+.platforms--on-blue .platform {
+  background: rgba(255, 255, 255, .12);
+  border-color: rgba(255, 255, 255, .38);
+  box-shadow: none;
+}
+.platforms--on-blue .platform:hover { background: rgba(255, 255, 255, .22); }
+.platforms--on-blue .platform--primary {
+  background: #fff;
+  color: var(--blue);
+  border-color: #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .2);
+}
+.platforms--on-blue .platform--primary:hover { background: var(--blue-tint); color: var(--blue); }
+.platforms--on-blue .platform:focus-visible { outline-color: #fff; }
+
+.platforms-meta {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 20px;
   font-size: 12.5px;
-  color: var(--slate-400);
-  margin: 8px 0 0;
+  color: var(--slate-500);
+}
+
+@media (max-width: 600px) {
+  .platforms { grid-template-columns: 1fr; max-width: 340px; }
+  .platforms-meta { flex-direction: column; align-items: center; }
 }
 
 /* --- Maquette de téléphone (héros) --------------------------------------- */
@@ -928,37 +964,6 @@ img { max-width: 100%; }
   line-height: 1.08;
 }
 
-.cta-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 26px; }
-
-.btn-white {
-  display: inline-flex; align-items: center; gap: 9px;
-  background: #fff; color: var(--blue);
-  font-weight: 700; font-size: 17px;
-  padding: 15px 28px; border-radius: 14px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, .2);
-  transition: background .15s;
-}
-.btn-white:hover { background: var(--blue-tint); color: var(--blue); }
-
-.btn-store {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: rgba(255, 255, 255, .14);
-  border: 1px solid rgba(255, 255, 255, .35);
-  color: #fff;
-  padding: 9px 16px;
-  border-radius: 12px;
-  transition: background .15s;
-}
-.btn-store:hover { background: rgba(255, 255, 255, .24); color: #fff; }
-.btn-store .stack { display: flex; flex-direction: column; line-height: 1.1; }
-.btn-store .pre { font-size: 10px; opacity: .85; }
-.btn-store .name { font-family: var(--font-display); font-weight: 700; font-size: 16px; }
-
-/* L'appli n'est pas encore publiée : le bloc Google Play informe, il ne
-   clique pas. C'est un <span>, pas un <a> — pas de faux lien mort. */
-.btn-store--soon { cursor: default; }
-.btn-store--soon:hover { background: rgba(255, 255, 255, .14); }
-
 .cta-phone { justify-self: center; }
 .cta-mini {
   width: 150px;
@@ -1061,7 +1066,7 @@ img { max-width: 100%; }
   .why-grid { grid-template-columns: 1fr; }
   .cta-grid { grid-template-columns: 1fr; text-align: center; }
   .cta-phone { display: none; }
-  .cta-actions { justify-content: center; }
+  .platforms--on-blue { margin-left: auto; margin-right: auto; }
 }
 
 /* Le bloc de statistiques chevauche la photo ; sur écran étroit il déborderait
@@ -1081,11 +1086,6 @@ img { max-width: 100%; }
 }
 
 /* --- Version web (app.mesureplus.com) ------------------------------------ */
-.web-link { margin: 18px 0 0; font-size: 15.5px; font-weight: 700; }
-.web-link a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
-.web-link a:hover { color: var(--blue-dark); }
-.web-meta { font-size: 12.5px; color: var(--slate-400); margin: 6px 0 0; }
-
 .plan-web {
   margin-top: 10px;
   text-align: center;
@@ -1096,4 +1096,3 @@ img { max-width: 100%; }
 }
 .plan--featured .plan-web, .plan--featured .plan-web:hover { color: #fff; }
 
-.btn-store--web { font-weight: 700; font-size: 15px; padding: 14px 18px; }
