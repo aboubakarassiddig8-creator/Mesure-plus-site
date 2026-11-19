@@ -17,7 +17,17 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   title,
   description,
-  icons: { icon: "/assets/favicon.png", apple: "/assets/apple-touch-icon.png" },
+  // Google shows the favicon next to the site in search results: it wants a
+  // square icon whose size is a multiple of 48 px, plus /favicon.ico.
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/assets/icon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/assets/favicon.png", sizes: "96x96", type: "image/png" },
+      { url: "/assets/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/assets/apple-touch-icon.png",
+  },
   openGraph: {
     type: "website",
     title,
@@ -43,6 +53,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           dangerouslySetInnerHTML={{
             __html: `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`,
+          }}
+        />
+        {/* Tells search engines which image is the brand's logo. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Mesure Plus",
+              url: SITE_URL,
+              logo: `${SITE_URL}/assets/logo.png`,
+            }),
           }}
         />
       </head>
