@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Figtree, Gloock } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { SITE_URL } from "@/lib/content";
 import { LangProvider } from "@/lib/i18n";
@@ -74,6 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SmoothScroll />
           {children}
         </LangProvider>
+        <Analytics />
       </body>
     </html>
   );
