@@ -5,7 +5,7 @@
 export type Lang = "fr" | "en";
 
 /** Bump the file name here when a new APK ships (versioned name = no stale cache). */
-export const APK_URL = "/telechargements/mesure-plus-1.0.10-arm64.apk";
+export const APK_URL = "/telechargements/mesure-plus-1.1.2-arm64.apk";
 export const WEB_APP_URL = "https://app.mesureplus.com";
 export const WHATSAPP_URL = "https://wa.me/237699386130";
 export const SITE_URL = "https://mesureplus.com";
